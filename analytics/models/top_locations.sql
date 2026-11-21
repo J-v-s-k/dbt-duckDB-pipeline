@@ -1,3 +1,4 @@
+{{ config(materialized='table') }}
 SELECT 
 job_location,
 COUNT(*) AS postings

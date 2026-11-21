@@ -1,4 +1,5 @@
 -- models/monthly_summary.sql: monthly totals + remote share from two refs
+{{ config(materialized='table') }}
 WITH totals AS (
     SELECT month, SUM(postings) AS total_postings
     FROM {{ ref('jobs_per_month') }}
